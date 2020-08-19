@@ -1,0 +1,45 @@
+version: '3'
+services:
+
+  bitcoind:
+    build: ./bitcoind
+    volumes:
+      - bitcoind-data:/root/.bitcoin/regtest
+    ports:
+      - "18888:18888"
+    networks:
+      elements-net:
+        ipv4_address: 172.16.238.10
+
+  elementsd-1:
+    build: ./elementsd-1
+    volumes:
+      - elementsd-1-data:/root/.elements/elementsregtest
+    ports:
+      - "18884:18884"
+    networks:
+      elements-net:
+        ipv4_address: 172.16.238.11
+      
+      
+  elementsd-2:
+    build: ./elementsd-2
+    volumes:
+      - elementsd-2-data:/root/.elements/elementsregtest
+    ports:
+      - "18886:18886"
+    networks:
+      elements-net:
+        ipv4_address: 172.16.238.12
+      
+volumes:
+  bitcoind-data:
+  elementsd-1-data:
+  elementsd-2-data:
+
+    
+networks:
+  elements-net:
+    ipam:
+     config:
+       - subnet: 172.16.238.0/24
