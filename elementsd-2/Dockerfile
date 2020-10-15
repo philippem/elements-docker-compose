@@ -1,4 +1,4 @@
-FROM blockstream/elementsd:0.18.1.8
+FROM blockstream/elementsd:0.18.1.9
 
 
 COPY wait-for-it.sh /usr/local/bin/wait-for-it.sh
