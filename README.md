@@ -67,6 +67,8 @@ Bash aliases are provided in `aliases.sh`:
 
 ```
 $ source ./aliases.sh
+$ e1-cli createwallet '' || true
+$ e1-cli rescanblockchain
 $ e1-cli getwalletinfo
 ```
 

@@ -1,4 +1,4 @@
-FROM blockstream/elementsd:0.18.1.9
+FROM blockstream/elementsd:0.21.0.1
 
 COPY wait-for-it.sh /usr/local/bin/wait-for-it.sh
 COPY docker-entrypoint.sh /docker-entrypoint.sh
