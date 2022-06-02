@@ -29,10 +29,10 @@ Verify that the three containers are running:
 
 ```
 $ docker ps
-CONTAINER ID        IMAGE                                 COMMAND                  CREATED             STATUS              PORTS                                 NAMES
-22a22e05e262        elements-docker-compose_elementsd-1   "/docker-entrypoint.…"   2 seconds ago       Up 1 second         0.0.0.0:18884->18884/tcp              elements-docker-compose_elementsd-1_1
-f7d2e2b890f2        elements-docker-compose_elementsd-2   "/docker-entrypoint.…"   2 seconds ago       Up 1 second         0.0.0.0:18886->18886/tcp              elements-docker-compose_elementsd-2_1
-ec75a4231576        elements-docker-compose_bitcoind      "/usr/local/bin/bitc…"   2 seconds ago       Up 1 second         0.0.0.0:18888->18888/tcp, 18889/tcp   elements-docker-compose_bitcoind_1
+CONTAINER ID   IMAGE                                 COMMAND                  CREATED         STATUS         PORTS                                 NAMES
+38719b9d2a03   elements-docker-compose_bitcoind      "/usr/local/bin/bitc…"   3 minutes ago   Up 3 minutes   0.0.0.0:18888->18888/tcp, 18889/tcp   docker-compose-bitcoind
+4cf27baea81e   elements-docker-compose_elementsd-1   "/docker-entrypoint.…"   3 minutes ago   Up 3 minutes   0.0.0.0:18884->18884/tcp              docker-compose-elementsd-1
+7228e131fa57   elements-docker-compose_elementsd-2   "/docker-entrypoint.…"   3 minutes ago   Up 3 minutes   0.0.0.0:18886->18886/tcp              docker-compose-elementsd-2
 ```
 
 The daemon RPC ports are exposed to the host and will be listed in the output of `docker ps`.

@@ -3,6 +3,7 @@ services:
 
   bitcoind:
     build: ./bitcoind
+    container_name: docker-compose-bitcoind
     volumes:
       - bitcoind-data:/root/.bitcoin/regtest
     ports:
@@ -13,6 +14,7 @@ services:
 
   elementsd-1:
     build: ./elementsd-1
+    container_name: docker-compose-elementsd-1
     volumes:
       - elementsd-1-data:/root/.elements/elementsregtest
     ports:
@@ -24,6 +26,7 @@ services:
       
   elementsd-2:
     build: ./elementsd-2
+    container_name: docker-compose-elementsd-2
     volumes:
       - elementsd-2-data:/root/.elements/elementsregtest
     ports:
