@@ -6,26 +6,41 @@ shopt -s expand_aliases
 source ./aliases.sh
 
 
+
 # Wait for bitcoin node to finish startup and respond to commands
-until b-cli getwalletinfo
+until b-cli getchaintips
 do
   echo "Waiting for bitcoin node to finish loading..."
   sleep 2
 done
 
+# create default wallet if it doesn't exist
+b-cli createwallet "" || true
+b-cli rescanblockchain
+b-cli getwalletinfo
+
+
 # Wait for e1 node to finish startup and respond to commands
-until e1-cli getwalletinfo
+until e1-cli getchaintips
 do
   echo "Waiting for e1 to finish loading..."
   sleep 2
 done
 
+e1-cli createwallet "" || true
+e1-cli rescanblockchain
+e1-cli getwalletinfo
+
 # Wait for e2 node to finish startup and respond to commands
-until e2-cli getwalletinfo
+until e2-cli getchaintips
 do
   echo "Waiting for e2 to finish loading..."
   sleep 2
 done
+
+e2-cli createwallet "" || true
+e2-cli rescanblockchain
+e2-cli getwalletinfo
 
 # Exit on error
 set -o errexit
