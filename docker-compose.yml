@@ -1,4 +1,3 @@
-version: '3'
 services:
 
   bitcoind:
@@ -34,11 +33,31 @@ services:
     networks:
       elements-net:
         ipv4_address: 172.16.238.12
+
+  elements-esplora:
+    build: ./esplora
+    environment:
+      - "DEBUG=VERBOSE"
+      - "NO_REGTEST_MINING=1"
+    container_name: docker-compose-elements-esplora
+    volumes:
+      - elements-esplora-data:/data
+    command:
+      - liquid-regtest
+      - explorer
+    ports:
+      - "8092:80"      
+    networks:
+      elements-net:
+        ipv4_address: 172.16.238.13
+
+        
       
 volumes:
   bitcoind-data:
   elementsd-1-data:
   elementsd-2-data:
+  elements-esplora-data:
 
     
 networks:

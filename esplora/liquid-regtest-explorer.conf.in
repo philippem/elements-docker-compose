@@ -1,0 +1,15 @@
+chain=elementsregtest
+server=1
+validatepegin=0
+blocknotify=pkill -USR1 electrs
+[elementsregtest]
+connect=elementsd-1:18886
+#connect=172.16.238.11:18886
+#connect=172.16.238.12:18887
+falllbackfee=0.00000099
+blockmintxfee=0.00000099
+minrelaytxfee=0.00000099
+
+# required for chain params to match
+initialfreecoins=2100000000000000
+

@@ -6,3 +6,5 @@ IMAGE_BASE_NAME=elements-docker-compose
 alias b-cli="docker exec docker-compose-bitcoind bitcoin-cli"
 alias e1-cli="docker exec docker-compose-elementsd-1 elements-cli"
 alias e2-cli="docker exec docker-compose-elementsd-2 elements-cli"
+
+alias es-cli="docker exec docker-compose-elements-esplora cli"
